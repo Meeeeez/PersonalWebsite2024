@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"
+        integrity="sha512-bzpp8klYroR6PFgL3RJ+VkvY5hJna7Zd38OA56peUDHSNQpSiN9lDQVnMYtcw7hoAVhbR6mAOdH+ymzg1o+G0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="sketch.js"></script>
+
+    <main class="manual-text">
+        <header>
+            <p>MOL.LE(7)</p>
+            <p>Miscellaneous Information Manual</p>
+            <p>MOL.LE(7)</p>
+        </header>
+        <section class="Sh">
+            <h2 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h2>
+            <p class="Pp"><code class="Nm">moritz</code> —
+                <span class="Nd" role="doc-subtitle">software engineer</span>
+                <span id="experience"></span>
+            </p>
+        </section>
+
+        <section class="Sh">
+            <h2 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h2>
+            <table class="Nm">
+                <tbody>
+                    <td><code class="Nm">mail</code></td>
+
+                    <tr>
+                        <td><a class="Mt" href="mailto:moritzmessner122@gmail.com">moritzmessner122@gmail.com</a>
+                            (primary)</td>
+                    </tr>
+                    <tr>
+                        <td><a class="Mt"
+                                href="mailto:e12225161@student.tuwien.ac.at">e12225161@student.tuwien.ac.at</a>
+                            (academic)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </section>
+
+        <section class="Sh">
+            <h2 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h2>
+            <p class="Pp">I mostly build software with Typescript. Currently I am working
+                as a Full-Stack Engineer at <a class="Lk" target="_blank"
+                    href="https://www.photogram.pro/">Photogram</a> while finishing my degree at <a class="Lk"
+                    target="_blank" href="https://www.tuwien.at/en/">TU Wien</a>.
+                <br>
+                In my free time I serve as a board member for both the local event organization
+                committee and the Paragliding club.
+                <br>
+                My goal for this year is to fly 50km in a single flight with my paraglider!
+            </p>
+
+            <p class="Pp" style="display: flex;">
+                <a class="Lk" href="https://git.causal.agency">code</a>&nbsp;—&nbsp;
+                <a class="Lk" href="https://text.causal.agency">words</a>&nbsp;—&nbsp;
+                <a class="Lk" href="/list/">mailist</a>
+                <span style="width: 100%; text-align: right;">March 30, 2024</span>
+            </p>
+        </section>
+
+    </main>
+
+    <script>
+        const expLabel = document.getElementById("experience");
+
+        // Get the current date and the target date
+        const now = new Date();
+        const targetDate = new Date(2022, 0, 1); // Jan 1, 2022
+
+        // Function to calculate the difference in years
+        function calculateYears() {
+            const now = new Date();
+            const diff = now - targetDate;
+            const years = diff / (1000 * 60 * 60 * 24 * 365.25); // Convert milliseconds to years
+            return years;
+        }
+
+        // Update the timer every 75 milliseconds
+        setInterval(function () {
+            const years = calculateYears();
+            expLabel.textContent = `(${years.toFixed(9)} years of experience)`;
+        }, 75);
+
+    </script>
+
+</body>
+
+</html>
