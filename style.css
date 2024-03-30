@@ -16,11 +16,11 @@ div.head, div.foot { display: flex; justify-content: space-between; }
 .head-vol, .foot-date { flex: 0 1 auto; text-align: center; }
 .head-rtitle, .foot-os { flex: 1; text-align: right; }
 
-.manual-text {margin: 0rem auto; max-width: 90ch;}
+.manual-text {margin: 0rem auto; max-width: 95ch;}
 
 html { font-family: monospace; line-height: 1.25em; user-select: none; }
 body { overflow: hidden; }
-header {margin: 0 auto; display: flex; justify-content: space-between; align-items: center; max-width: 90ch;}
+header {margin: 0 auto; display: flex; justify-content: space-between; align-items: center; max-width: 95ch;}
 canvas {z-index: calc(-infinity);}
 table { border-collapse: collapse; }
 table.Nm code.Nm { padding-right: 1ch; }
