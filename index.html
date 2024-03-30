@@ -21,6 +21,7 @@
             <p>Miscellaneous Information Manual</p>
             <p>MOL.LE(7)</p>
         </header>
+        <div style="background-color: rgba(23, 22, 15, 40%); margin-top: 1rem; border: 2px solid #7e4422; padding: 1rem 1.5rem; border-radius: 5px; backdrop-filter: blur(15px);">
         <section class="Sh">
             <h2 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h2>
             <p class="Pp"><code class="Nm">moritz</code> —
@@ -59,20 +60,31 @@
                 In my free time I serve as a board member for both the local event organization
                 committee and the Paragliding club.
                 <br>
-                My goal for this year is to fly 50km in a single flight with my paraglider!
+                My goal for this year is to learn more about Web Engineering and to fly 50km in a single flight!
             </p>
 
             <p class="Pp" style="display: flex;">
-                <a class="Lk" href="https://git.causal.agency">code</a>&nbsp;—&nbsp;
-                <a class="Lk" href="https://text.causal.agency">words</a>&nbsp;—&nbsp;
-                <a class="Lk" href="/list/">mailist</a>
+                <a class="Lk" target="_blank" href="https://github.com/Meeeeez">code</a>&nbsp;—&nbsp;
+                <a class="Lk" target="_blank" href="/resume.pdf">cv</a>&nbsp;—&nbsp;
+                <a class="Lk" target="_blank" href="https://paraclub.it">paraclub</a>
                 <span style="width: 100%; text-align: right;">March 30, 2024</span>
             </p>
         </section>
+    </div>
 
     </main>
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const anchors = document.querySelectorAll('a');
+            anchors.forEach(anchor => {
+                anchor.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+            });
+        });
+
         const expLabel = document.getElementById("experience");
 
         // Get the current date and the target date
