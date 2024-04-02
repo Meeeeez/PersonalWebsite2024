@@ -19,11 +19,13 @@ class ArrayList extends Array {
 let pts;
 let onPressed;
 let f;
-let w = window.innerWidth;
-let h = window.innerHeight;
-let x = 0;
+let w;
+let h;
+let fistIteration = true;
 
 function setup() {
+    w = window.innerWidth;
+    h = window.innerHeight;
     canvas = createCanvas(w, h);
     canvas.style("position: absolute; top: 0; right: 0;");
     colorMode(HSB, 255);
@@ -32,23 +34,23 @@ function setup() {
 }
 
 function draw() {
-    if (x == 0) {
+    if (fistIteration) {
         for (let j = 0; j <= window.innerWidth; j += 30) {
-            for (let i = 0; i < random(10, 30); i++) {
+            for (let i = 0; i < 5; i++) {
                 let newP = new Particle(
                     j,
-                    window.innerHeight,
+                    window.innerHeight - 15,
                     i + pts.size(),
                     i + pts.size()
                 );
                 pts.add(newP);
             }
         }
-        x++;
+        fistIteration = false;
     }
 
     if (onPressed) {
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 8; i++) {
             let newP = new Particle(
                 mouseX,
                 mouseY,
@@ -58,6 +60,7 @@ function draw() {
             pts.add(newP);
         }
     }
+
     for (let i = pts.size() - 1; i > -1; i--) {
         let p = pts.get(i);
         if (p.dead) {
@@ -67,6 +70,14 @@ function draw() {
             p.display();
         }
     }
+}
+
+function reset() {
+    for (let i = 0; i < pts.size(); i++) {
+        pts.get(i).dead = true;
+    }
+    clear();
+    fistIteration = true;
 }
 
 class Particle {
@@ -175,23 +186,11 @@ function mousePressed() {
 function mouseReleased() {
     onPressed = false;
 }
-function keyPressed() {
-    for (let i = pts.size() - 1; i > -1; i--) {
-        let p = pts.get(i);
-        pts.remove(i);
-    }
-    clear();
+function windowResized() {
+    reset();
+    setup();
+}
 
-    for (let j = 0; j <= window.innerWidth; j += 30) {
-        for (let i = 0; i < random(10, 30); i++) {
-            let newP = new Particle(
-                j,
-                window.innerHeight,
-                i + pts.size(),
-                i + pts.size()
-            );
-            pts.add(newP);
-        }
-    }
-    x++;
+function keyPressed() {
+    reset();
 }

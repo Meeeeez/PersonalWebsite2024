@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.svg">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"
         integrity="sha512-bzpp8klYroR6PFgL3RJ+VkvY5hJna7Zd38OA56peUDHSNQpSiN9lDQVnMYtcw7hoAVhbR6mAOdH+ymzg1o+G0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <title>Document</title>
+    <title>Moritz Messner</title>
 </head>
 
 <body>
@@ -21,72 +23,69 @@
             <p style="text-align: center;">Miscellaneous Information Manual</p>
             <p>MOL.LE(7)</p>
         </header>
-        <div style="background-color: rgba(23, 22, 15, 40%); margin-top: 1rem; border: 2px solid #7e4422; padding: 1rem 1.5rem; border-radius: 5px; backdrop-filter: blur(15px);">
-            
+        <div class="backdrop-container">
+
             <section class="Sh">
+                <h2 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h2>
+                <p class="Pp">
+                    <code class="Nm">moritz</code> —
+                    <span class="Nd" role="doc-subtitle">software engineer</span>
+                    <span id="experience"></span>
+                </p>
+            </section>
 
-            <h2 class="Sh" id="NAME"><a class="permalink" href="#NAME">NAME</a></h2>
-            <p class="Pp"><code class="Nm">moritz</code> —
-                <span class="Nd" role="doc-subtitle">software engineer</span>
-                <span id="experience"></span>
-            </p>
-        </section>
+            <section class="Sh">
+                <h2 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h2>
+                <table class="Nm">
+                    <tbody>
+                        <td>
+                            <code class="Nm">mail</code>
+                        </td>
 
-        <section class="Sh">
-            <h2 class="Sh" id="SYNOPSIS"><a class="permalink" href="#SYNOPSIS">SYNOPSIS</a></h2>
-            <table class="Nm">
-                <tbody>
-                    <td><code class="Nm">mail</code></td>
+                        <tr>
+                            <td>
+                                <a class="Mt" href="mailto:moritzmessner122@gmail.com">moritzmessner122@gmail.com</a>
+                                (primary)
+                            </td>
+                        </tr>
 
-                    <tr>
-                        <td><a class="Mt" href="mailto:moritzmessner122@gmail.com">moritzmessner122@gmail.com</a>
-                            (primary)</td>
-                    </tr>
-                    <tr>
-                        <td><a class="Mt"
-                                href="mailto:e12225161@student.tuwien.ac.at">e12225161@student.tuwien.ac.at</a>
-                            (academic)</td>
-                    </tr>
-                </tbody>
-            </table>
+                        <tr>
+                            <td>
+                                <a class="Mt"
+                                    href="mailto:e12225161@student.tuwien.ac.at">e12225161@student.tuwien.ac.at</a>
+                                (academic)
+                            </td>
+                        </tr>
 
-        </section>
+                    </tbody>
+                </table>
+            </section>
 
-        <section class="Sh">
-            <h2 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h2>
-            <p class="Pp">I build software mostly with Typescript. Currently I am working
-                as a Full-Stack Engineer at <a class="Lk" target="_blank"
-                    href="https://www.photogram.pro/">Photogram</a> while finishing my degree at <a class="Lk"
-                    target="_blank" href="https://www.tuwien.at/en/">TU Wien</a>.
-                <br>
-                In my free time I serve as a board member for both the local event organization
-                committee and the Paragliding club.
-                <br>
-                My goal for this year is to learn more about Web Engineering and to fly 50km in a single flight!
-            </p>
+            <section class="Sh">
+                <h2 class="Sh" id="DESCRIPTION"><a class="permalink" href="#DESCRIPTION">DESCRIPTION</a></h2>
+                <p class="Pp">I build software mostly with Typescript. Currently I am working
+                    as a Full-Stack Engineer at <a class="Lk" target="_blank"
+                        href="https://www.photogram.pro/">Photogram</a> while finishing my degree at <a class="Lk"
+                        target="_blank" href="https://www.tuwien.at/en/">TU Wien</a>.
+                    <br>
+                    In my free time I serve as a board member for both the local event organization
+                    committee and the Paragliding club.
+                    <br>
+                    My goal for this year is to learn more about Web Engineering and to fly 50km in a single flight!
+                </p>
 
-            <p class="Pp" style="display: flex;">
-                <a class="Lk" target="_blank" href="https://github.com/Meeeeez">code</a>&nbsp;—&nbsp;
-                <a class="Lk" target="_blank" href="/resume.pdf">cv</a>&nbsp;—&nbsp;
-                <a class="Lk" target="_blank" href="https://paraclub.it">paraclub</a>
-                <span style="width: 100%; text-align: right;">March 30, 2024</span>
-            </p>
-        </section>
-    </div>
+                <p class="Pp" style="display: flex;">
+                    <a class="Lk" target="_blank" href="https://github.com/Meeeeez">code</a>&nbsp;—&nbsp;
+                    <a class="Lk" target="_blank" href="/resume.pdf">cv</a>&nbsp;—&nbsp;
+                    <a class="Lk" target="_blank" href="https://paraclub.it">paraclub</a>
+                    <span style="width: 100%; text-align: right;">March 30, 2024</span>
+                </p>
+            </section>
+        </div>
 
     </main>
 
     <script>
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const anchors = document.querySelectorAll('a');
-            anchors.forEach(anchor => {
-                anchor.addEventListener('click', (event) => {
-                    event.stopPropagation();
-                });
-            });
-        });
-
         const expLabel = document.getElementById("experience");
 
         // Get the current date and the target date
@@ -106,7 +105,6 @@
             const years = calculateYears();
             expLabel.textContent = `(${years.toFixed(9)} years of experience)`;
         }, 75);
-
     </script>
 
 </body>

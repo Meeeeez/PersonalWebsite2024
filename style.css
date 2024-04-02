@@ -17,6 +17,7 @@ div.head, div.foot { display: flex; justify-content: space-between; }
 .head-rtitle, .foot-os { flex: 1; text-align: right; }
 
 .manual-text {margin: 0rem auto; max-width: 95ch;}
+.backdrop-container {background-color: rgba(23, 22, 15, 40%); margin-top: 1rem; border: 2px solid #7e4422; padding: 1rem 1.5rem; border-radius: 5px; backdrop-filter: blur(15px);  -webkit-backdrop-filter: blur(15px); /* For Safari */}
 
 html { font-family: monospace; line-height: 1.25em; user-select: none; }
 body { overflow: hidden; }
