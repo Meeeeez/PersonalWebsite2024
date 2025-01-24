@@ -192,5 +192,7 @@ function windowResized() {
 }
 
 function keyPressed() {
-    reset();
+    if (key == ' ') {
+        reset();
+    }
 }
